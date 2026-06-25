@@ -1,12 +1,10 @@
-const express = require("express");
-
-const app = express();
-
 app.get("/", (req, res) => {
   res.send("TEST BERHASIL");
 });
 
-const PORT = process.env.PORT || 3000;
+app.get("/tes", (req, res) => {
+  res.send("Route tes aktif");
+});
 
 app.listen(PORT, () => {
   console.log(`Server berjalan di port ${PORT}`);
