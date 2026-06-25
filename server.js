@@ -27,12 +27,12 @@ app.get("/tes", (req, res) => {
 
 // Koneksi Database
 sequelize
-  .authenticate()
+  .sync()
   .then(() => {
-    console.log("Database terkoneksi");
+    console.log("Database terkoneksi dan tabel dibuat");
   })
   .catch((error) => {
-    console.log("Gagal koneksi database:", error);
+    console.log(error);
   });
 
 // Jalankan Server
