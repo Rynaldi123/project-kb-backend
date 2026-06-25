@@ -1,31 +1,10 @@
 const express = require("express");
-const cors = require("cors");
-
-const sequelize = require("./config/database");
-const anggotaRoutes = require("./routes/anggotaRoutes");
-const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
-app.use(cors());
-app.use(express.json());
-
-app.use("/api/auth", authRoutes);
-app.use("/api/anggota", anggotaRoutes);
-
 app.get("/", (req, res) => {
-  console.log("ROOT ROUTE DIPANGGIL");
-  res.send("Backend Project KB Berjalan");
+  res.send("TEST BERHASIL");
 });
-
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log("Database terkoneksi");
-  })
-  .catch((error) => {
-    console.log("Gagal koneksi:", error);
-  });
 
 const PORT = process.env.PORT || 3000;
 
