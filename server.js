@@ -14,6 +14,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/anggota", anggotaRoutes);
 
 app.get("/", (req, res) => {
+  console.log("ROOT ROUTE DIPANGGIL");
   res.send("Backend Project KB Berjalan");
 });
 
